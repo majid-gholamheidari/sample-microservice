@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "bf8957b2-9680-4d03-ad53-9a5d2e27a57d",
+		"name": "Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43118385"
+	},
+	"item": [
+		{
+			"name": "V1",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/v1/events?limit=20&page=1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"events"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2025-12-25 23:45",
+									"description": "optional | valid format: Y-m-d H:i",
+									"disabled": true
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"description": "optional | int",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"description": "optional | default: 10"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "optional | default: 1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8000/api/v1/events?limit=20&page=1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"events"
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": "2025-12-25 23:45",
+											"description": "optional | valid format: Y-m-d H:i",
+											"disabled": true
+										},
+										{
+											"key": "user_id",
+											"value": "1",
+											"description": "optional | int",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "20",
+											"description": "optional | default: 10"
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "optional | default: 1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.20"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Jul 2025 07:27:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"message\": \"Events retrieved successfully.\",\n    \"data\": {\n        \"events\": [\n            {\n                \"id\": 1,\n                \"user_id\": 1,\n                \"event_name\": \"sample event name\",\n                \"payload\": {\n                    \"attr_1\": \"attr_1 val\",\n                    \"attr_2\": \"attr_2 val\"\n                },\n                \"created_at\": \"2025-07-02T07:26:27.000000Z\",\n                \"updated_at\": \"2025-07-02T07:26:27.000000Z\"\n            }\n        ],\n        \"pagination\": {\n            \"current_page\": 1,\n            \"per_page\": 20,\n            \"last_page\": 1,\n            \"total\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":1,\r\n    \"event_name\":\"sample event name\",\r\n    \"payload\": {\r\n        \"attr_1\": \"attr_1 val\",\r\n        \"attr_2\": \"attr_2 val\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/v1/event",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"event"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\":1,\r\n    \"event_name\":\"sample event name\",\r\n    \"payload\": {\r\n        \"attr_1\": \"attr_1 val\",\r\n        \"attr_2\": \"attr_2 val\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/v1/event",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"event"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.20"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Jul 2025 07:25:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"message\": \"Event stored successfully.\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
